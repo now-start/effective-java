@@ -7,7 +7,7 @@ import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
 
-enum StaticFinal {
+enum Constant {
     EFFECTIVE_JAVA("""
         
         # effective-java
@@ -52,7 +52,7 @@ enum StaticFinal {
 
     private final String value;
 
-    StaticFinal(String path) {
+    Constant(String path) {
         this.value = path;
     }
 
@@ -82,11 +82,11 @@ public class CreateReadme {
         List<String> chapters = Arrays.stream(new File(Path.ROOT_PATH.toString()).list()).filter(s -> s.contains("chater")).toList();
         BufferedWriter bw = new BufferedWriter(new FileWriter(Path.README_PATH.toString()));
 
-        bw.write(StaticFinal.EFFECTIVE_JAVA.toString());
+        bw.write(Constant.EFFECTIVE_JAVA.toString());
         list(chapters, bw);
-        bw.write(StaticFinal.CONVENTION.toString());
-        bw.write(StaticFinal.GROUND_RULE.toString());
-        bw.write(StaticFinal.REFERENCE.toString());
+        bw.write(Constant.CONVENTION.toString());
+        bw.write(Constant.GROUND_RULE.toString());
+        bw.write(Constant.REFERENCE.toString());
         itemList(chapters, bw);
         bw.flush();
         bw.close();
@@ -95,7 +95,7 @@ public class CreateReadme {
     private static void itemList(List<String> chapters, BufferedWriter bw) throws IOException {
         for (String chapter : chapters) {
             bw.write("\n## " + toUpperCase(chapter) + "\n");
-            bw.write(StaticFinal.ITEM.toString());
+            bw.write(Constant.ITEM.toString());
 
             List<String> items = Arrays.stream(new File(chapter).list()).filter(s -> s.contains("item")).toList();
             String flag = "";
