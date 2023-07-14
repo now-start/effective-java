@@ -30,6 +30,7 @@ jobs:
         distribution: 'temurin'
     - name: Run Java
       run: |
+        ls
         cd util
         javac ./util/CreateReadme.java
         java CreateReadme
