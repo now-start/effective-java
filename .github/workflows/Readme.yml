@@ -31,7 +31,7 @@ jobs:
     - name: Run Java
       run: |
         cd util
-        javac .\CreateReadme.java
+        javac CreateReadme.java
         java CreateReadme Path Constant
     - name: Run Update READEME.md File
       run: |
