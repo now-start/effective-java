@@ -30,8 +30,9 @@ jobs:
         distribution: 'temurin'
     - name: Run Java
       run: |
-        ls
         cd util
+        javac ./CreateReadme.java
+        ls
         java CreateReadme
     - name: Run Update READEME.md File
       run: |
