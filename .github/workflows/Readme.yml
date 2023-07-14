@@ -32,7 +32,8 @@ jobs:
       run: |
         ls
         cd util
-        javac ./util/CreateReadme.java
+        ls
+        javac CreateReadme.java
         java CreateReadme
     - name: Run Update READEME.md File
       run: |
