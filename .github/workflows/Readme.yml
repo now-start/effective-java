@@ -32,7 +32,7 @@ jobs:
       run: |
         cd util
         javac CreateReadme.java
-        java CreateReadme Path Constant
+        java Path Constant CreateReadme
     - name: Run Update READEME.md File
       run: |
         git add .
