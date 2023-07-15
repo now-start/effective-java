@@ -54,3 +54,6 @@ effective-java
 | item1. 생성자 대신 정적 팩터리 메서드를 고려하라 | [nowstart](https://github.com/now-start/effective-java/blob/main/chater02/item1-생성자%20대신%20정적%20팩터리%20메서드를%20고려하라-nowstart.md) |
 | item2. 생성자에 매개변수가 많다면 필더를 고려하라 | [nowstart](https://github.com/now-start/effective-java/blob/main/chater02/item2-생성자에%20매개변수가%20많다면%20필더를%20고려하라-nowstart.md) |
 | item3. private 생성자나 열거 타입으로 싱글턴임을 보증하라 | [nowstart](https://github.com/now-start/effective-java/blob/main/chater02/item3-private%20생성자나%20열거%20타입으로%20싱글턴임을%20보증하라-nowstart.md) |
+| item4. 인스턴스화를 막으려거든 private 생성자를 사용하라 | [nowstart](https://github.com/now-start/effective-java/blob/main/chater02/item4-인스턴스화를%20막으려거든%20private%20생성자를%20사용하라-nowstart.md) |
+| item5. 자원을 직접 명시하지 말고 의존 객체 주입을 사용하라 | [nowstart](https://github.com/now-start/effective-java/blob/main/chater02/item5-자원을%20직접%20명시하지%20말고%20의존%20객체%20주입을%20사용하라-nowstart.md) |
+| item6. 불필요한 객체 생성을 피하라 | [nowstart](https://github.com/now-start/effective-java/blob/main/chater02/item6-불필요한%20객체%20생성을%20피하라-nowstart.md) |
