@@ -30,8 +30,7 @@ jobs:
         distribution: 'corretto'
     - name: Run Java
       run: |
-        cd util
-        javac -encoding utf-8 CreateReadme.java
+        javac -encoding utf-8 util/CreateReadme.java
         java util.CreateReadme
     - name: Run Update READEME.md File
       run: |
