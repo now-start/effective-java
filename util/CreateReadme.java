@@ -81,7 +81,7 @@ enum Path {
 
 public class CreateReadme {
     public static void main(String[] args) throws IOException {
-        List<String> chapters = Arrays.stream(new File(Path.ROOT_PATH.toString()).list()).filter(s -> s.contains("chater")).sorted(Comparator.reverseOrder()).toList();
+        List<String> chapters = Arrays.stream(new File(Path.ROOT_PATH.toString()).list()).filter(s -> s.contains("chater")).sorted().toList();
         BufferedWriter bw = new BufferedWriter(new FileWriter(Path.README_PATH.toString(), StandardCharsets.UTF_8));
 
         try {
@@ -102,7 +102,7 @@ public class CreateReadme {
             bw.write("\n## " + toUpperCase(chapter) + "\n");
             bw.write(Constant.ITEM.toString());
 
-            List<String> items = Arrays.stream(new File(Path.ROOT_PATH + chapter).list()).filter(s -> s.contains("item")).sorted(Comparator.reverseOrder()).toList();
+            List<String> items = Arrays.stream(new File(Path.ROOT_PATH + chapter).list()).filter(s -> s.contains("item")).sorted().toList();
             String flag = "";
             for (String item : items) {
                 String[] split = item.split("-");
