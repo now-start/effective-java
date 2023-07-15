@@ -27,12 +27,11 @@ jobs:
       uses: actions/setup-java@v3
       with:
         java-version: '17'
-        distribution: 'temurin'
+        distribution: 'corretto'
     - name: Run Java
       run: |
         cd util
-        javac -encoding utf-8 CreateReadme.java
-        java -classpath ..\ util.CreateReadme
+        java CreateReadme.java
     - name: Run Update READEME.md File
       run: |
         git add .
