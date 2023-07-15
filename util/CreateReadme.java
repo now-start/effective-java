@@ -4,19 +4,20 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
 import java.util.List;
 
 enum Constant {
     EFFECTIVE_JAVA("""
-        
+                
         # effective-java
                         
         [![build](https://github.com/now-start/effective-java/actions/workflows/pages/pages-build-deployment/badge.svg)](https://now-start.github.io/effective-java/)
                         
         """),
     CONVENTION("""
-        
+                
         ## Convention
 
         * GitHub Workflow 사용
@@ -28,12 +29,12 @@ enum Constant {
                     
         """),
     GROUND_RULE("""
-        
+                
         ## Ground Rule
                     
         """),
     REFERENCE("""
-        
+                
         ## Reference
 
         * [책 정보 링크](https://www.yes24.com/Product/Goods/65551284)
@@ -45,7 +46,7 @@ enum Constant {
                     
         """),
     ITEM("""
-        
+                
         | item                                            | presentation |
         |-------------------------------------------------|--------------""");
 
@@ -63,7 +64,7 @@ enum Constant {
 }
 
 enum Path {
-    ROOT_PATH("./"), README_PATH("./readme.md");
+    ROOT_PATH("../"), README_PATH("../README.md");
 
     private final String value;
 
@@ -80,16 +81,19 @@ enum Path {
 public class CreateReadme {
     public static void main(String[] args) throws IOException {
         List<String> chapters = Arrays.stream(new File(Path.ROOT_PATH.toString()).list()).filter(s -> s.contains("chater")).toList();
-        BufferedWriter bw = new BufferedWriter(new FileWriter(Path.README_PATH.toString()));
+        BufferedWriter bw = new BufferedWriter(new FileWriter(Path.README_PATH.toString(), StandardCharsets.UTF_8));
 
-        bw.write(Constant.EFFECTIVE_JAVA.toString());
-        list(chapters, bw);
-        bw.write(Constant.CONVENTION.toString());
-        bw.write(Constant.GROUND_RULE.toString());
-        bw.write(Constant.REFERENCE.toString());
-        itemList(chapters, bw);
-        bw.flush();
-        bw.close();
+        try {
+            bw.write(Constant.EFFECTIVE_JAVA.toString());
+            list(chapters, bw);
+            bw.write(Constant.CONVENTION.toString());
+            bw.write(Constant.GROUND_RULE.toString());
+            bw.write(Constant.REFERENCE.toString());
+            itemList(chapters, bw);
+        } finally {
+            bw.flush();
+            bw.close();
+        }
     }
 
     private static void itemList(List<String> chapters, BufferedWriter bw) throws IOException {
@@ -97,7 +101,7 @@ public class CreateReadme {
             bw.write("\n## " + toUpperCase(chapter) + "\n");
             bw.write(Constant.ITEM.toString());
 
-            List<String> items = Arrays.stream(new File(chapter).list()).filter(s -> s.contains("item")).toList();
+            List<String> items = Arrays.stream(new File(Path.ROOT_PATH + chapter).list()).filter(s -> s.contains("item")).toList();
             String flag = "";
             for (String item : items) {
                 String[] split = item.split("-");
@@ -119,7 +123,7 @@ public class CreateReadme {
     }
 
     private static void list(List<String> chapters, BufferedWriter bw) throws IOException {
-        if (chapters != null) {
+        if (!chapters.isEmpty()) {
             bw.write("* List\n");
         }
         for (String chapter : chapters) {
