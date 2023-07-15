@@ -29,7 +29,10 @@ jobs:
         java-version: '17'
         distribution: 'corretto'
     - name: Run Java
-      run: java util.CreateReadme.java
+      run: |
+        cd util
+        javac -encoding utf-8 CreateReadme.java
+        java util.CreateReadme
     - name: Run Update READEME.md File
       run: |
         git add .
