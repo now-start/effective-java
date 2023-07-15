@@ -11,10 +11,27 @@
 
 * GitHub Workflow 사용
 * 각자 필요한 Branch 생성
-* 각 Chapter 별 패키지에 itemNumber_itemTitle_gitHubUserName 으로 저장
+* 각 Chapter 별 패키지에 itemNumber-itemTitle-gitHubUserName 으로 저장
+  * **자동으로 README.md 를 생성하기 때문에 gitHubUserName 에 - 제외**
 * 필요시 각 Chapter 패키지에 src 및 resource 패키지 생성 가능
 * 작성 완료 후 reviewer 전체 지정 후 main 으로 PR
 * 질문 및 필요사항 review 후 merge
+
+
+## Project Tree
+
+```
+effective-java
+├─chater1
+│  ├─item1-itemTitle-gitHubUserName.md
+│  ├─item1-itemTitle-gitHubUserName.md
+│  ├─item2-itemTitle-gitHubUserName.md
+│  └─...
+├─chater2
+│  └─...
+├─...
+└─util
+```
 
 
 ## Ground Rule
@@ -34,6 +51,6 @@
 
 | item | presentation |
 |------|--------------|
-| item1. 생성자 대신 정적 팩터리 메서드를 고려하라 | [nowstart](https://github.com/now-start/effective-java/blob/main/item1-생성자%20대신%20정적%20팩터리%20메서드를%20고려하라-nowstart.md) |
-| item2. 생성자에 매개변수가 많다면 필더를 고려하라 | [nowstart](https://github.com/now-start/effective-java/blob/main/item2-생성자에%20매개변수가%20많다면%20필더를%20고려하라-nowstart.md) |
-| item3. private 생성자나 열거 타입으로 싱글턴임을 보증하라 | [nowstart](https://github.com/now-start/effective-java/blob/main/item3-private%20생성자나%20열거%20타입으로%20싱글턴임을%20보증하라-nowstart.md) |
+| item1. 생성자 대신 정적 팩터리 메서드를 고려하라 | [nowstart](https://github.com/now-start/effective-java/blob/main/chater02item1-생성자%20대신%20정적%20팩터리%20메서드를%20고려하라-nowstart.md) |
+| item2. 생성자에 매개변수가 많다면 필더를 고려하라 | [nowstart](https://github.com/now-start/effective-java/blob/main/chater02item2-생성자에%20매개변수가%20많다면%20필더를%20고려하라-nowstart.md) |
+| item3. private 생성자나 열거 타입으로 싱글턴임을 보증하라 | [nowstart](https://github.com/now-start/effective-java/blob/main/chater02item3-private%20생성자나%20열거%20타입으로%20싱글턴임을%20보증하라-nowstart.md) |
