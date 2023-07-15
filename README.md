@@ -2,6 +2,7 @@
 # effective-java
 
 [![build](https://github.com/now-start/effective-java/actions/workflows/pages/pages-build-deployment/badge.svg)](https://now-start.github.io/effective-java/)
+![Readme](https://github.com/now-start/effective-java/actions/workflows/Readme.yml/badge.svg)
 
 * List
     * [Chater02](#chater02)
