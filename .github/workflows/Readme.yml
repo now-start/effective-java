@@ -32,9 +32,7 @@ jobs:
       run: |
         javac -encoding utf-8 ./util/CreateReadme.java
         java util.CreateReadme
-    - name: Run Update READEME.md File
-      run: |
-        git add .
-        git diff
-        git commit -m "Update README.md"
-        git push
+    - name: Commit & Push changes
+      uses: actions-js/push@master
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
