@@ -32,6 +32,9 @@ jobs:
       run: |
         javac -encoding utf-8 ./util/CreateReadme.java
         java util.CreateReadme
+        cd..
+        ls
+
     - name: Commit & Push changes
       uses: actions-js/push@master
       with:
