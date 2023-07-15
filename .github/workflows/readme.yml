@@ -33,5 +33,3 @@ jobs:
           cat README.md >> $GITHUB_STEP_SUMMARY
       - name: Commit & Push changes
         uses: stefanzweifel/git-auto-commit-action@v4
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
