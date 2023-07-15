@@ -100,6 +100,7 @@ enum Path {
 
 public class CreateReadme {
     public static void main(String[] args) throws IOException {
+        //test
         List<String> chapters = Arrays.stream(new File(Path.ROOT_PATH.toString()).list()).filter(s -> s.contains("chater")).sorted().toList();
         BufferedWriter bw = new BufferedWriter(new FileWriter(Path.README_PATH.toString(), StandardCharsets.UTF_8));
 
