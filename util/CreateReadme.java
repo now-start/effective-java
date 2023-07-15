@@ -6,7 +6,6 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
-import java.util.Comparator;
 import java.util.List;
 
 enum Constant {
@@ -16,19 +15,38 @@ enum Constant {
                         
         [![build](https://github.com/now-start/effective-java/actions/workflows/pages/pages-build-deployment/badge.svg)](https://now-start.github.io/effective-java/)
         ![readme](https://github.com/now-start/effective-java/actions/workflows/readme.yml/badge.svg)
-        
+                
         """),
     CONVENTION("""
                 
         ## Convention
-
+                     
         * GitHub Workflow 사용
         * 각자 필요한 Branch 생성
-        * 각 Chapter 별 패키지에 itemNumber_itemTitle_gitHubUserName 으로 저장
+        * 각 Chapter 별 패키지에 itemNumber-itemTitle-gitHubUserName 으로 저장
+          * **자동으로 README.md 를 생성하기 때문에 gitHubUserName 에 - 제외**
         * 필요시 각 Chapter 패키지에 src 및 resource 패키지 생성 가능
         * 작성 완료 후 reviewer 전체 지정 후 main 으로 PR
         * 질문 및 필요사항 review 후 merge
                     
+        """),
+    PROJECT_TREE("""
+                
+        ## Project Tree
+                
+        ```
+        effective-java
+        ├─chater1
+        │  ├─item1-itemTitle-gitHubUserName.md
+        │  ├─item1-itemTitle-gitHubUserName.md
+        │  ├─item2-itemTitle-gitHubUserName.md
+        │  └─...
+        ├─chater2
+        │  └─...
+        ├─...
+        └─util
+        ```
+        
         """),
     GROUND_RULE("""
                 
@@ -89,6 +107,7 @@ public class CreateReadme {
             bw.write(Constant.EFFECTIVE_JAVA.toString());
             list(chapters, bw);
             bw.write(Constant.CONVENTION.toString());
+            bw.write(Constant.PROJECT_TREE.toString());
             bw.write(Constant.GROUND_RULE.toString());
             bw.write(Constant.REFERENCE.toString());
             itemList(chapters, bw);
@@ -113,10 +132,10 @@ public class CreateReadme {
 
                 if (!flag.equals(itemNumber)) {
                     bw.write("|\n");
-                    bw.write("| " + itemNumber + ". " + itemName + " | [" + userName.split("\\.")[0] + "](https://github.com/now-start/effective-java/blob/main/" + item.replace(" ", "%20") + ") ");
+                    bw.write("| " + itemNumber + ". " + itemName + " | [" + userName.split("\\.")[0] + "](https://github.com/now-start/effective-java/blob/main/" + chapter + item.replace(" ", "%20") + ") ");
                     flag = itemNumber;
                 } else {
-                    bw.write("/ [" + userName.split("\\.")[0] + "](https://github.com/now-start/effective-java/blob/main/" + item.replace(" ", "%20") + ") ");
+                    bw.write("/ [" + userName.split("\\.")[0] + "](https://github.com/now-start/effective-java/blob/main/" + chapter + item.replace(" ", "%20") + ") ");
                     flag = itemNumber;
                 }
             }
