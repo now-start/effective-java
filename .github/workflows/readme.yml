@@ -10,7 +10,6 @@ name: readme
 on:
   pull_request:
     branches: [ "main" ]
-    types: [opened, synchronize]
 
 permissions:
   contents: write
