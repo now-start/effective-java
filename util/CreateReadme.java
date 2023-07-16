@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Objects;
 
 enum Constant {
     EFFECTIVE_JAVA("""
@@ -100,10 +101,9 @@ enum Path {
 
 public class CreateReadme {
     public static void main(String[] args) throws IOException {
-        List<String> chapters = Arrays.stream(new File(Path.ROOT_PATH.toString()).list()).filter(s -> s.contains("chater")).sorted().toList();
-        BufferedWriter bw = new BufferedWriter(new FileWriter(Path.README_PATH.toString(), StandardCharsets.UTF_8));
+        List<String> chapters = Arrays.stream(Objects.requireNonNull(new File(Path.ROOT_PATH.toString()).list())).filter(s -> s.contains("chater")).sorted().toList();
 
-        try {
+        try(BufferedWriter bw = new BufferedWriter(new FileWriter(Path.README_PATH.toString(), StandardCharsets.UTF_8))){
             bw.write(Constant.EFFECTIVE_JAVA.toString());
             list(chapters, bw);
             bw.write(Constant.CONVENTION.toString());
@@ -111,9 +111,8 @@ public class CreateReadme {
             bw.write(Constant.GROUND_RULE.toString());
             bw.write(Constant.REFERENCE.toString());
             itemList(chapters, bw);
-        } finally {
+
             bw.flush();
-            bw.close();
         }
     }
 
@@ -122,7 +121,7 @@ public class CreateReadme {
             bw.write("\n## " + toUpperCase(chapter) + "\n");
             bw.write(Constant.ITEM.toString());
 
-            List<String> items = Arrays.stream(new File(Path.ROOT_PATH + chapter).list()).filter(s -> s.contains("item")).sorted().toList();
+            List<String> items = Arrays.stream(Objects.requireNonNull(new File(Path.ROOT_PATH + chapter).list())).filter(s -> s.contains("item")).sorted().toList();
             String flag = "";
             for (String item : items) {
                 String[] split = item.split("-");
@@ -133,11 +132,10 @@ public class CreateReadme {
                 if (!flag.equals(itemNumber)) {
                     bw.write("|\n");
                     bw.write("| " + itemNumber + ". " + itemName + " | [" + userName.split("\\.")[0] + "](https://github.com/now-start/effective-java/blob/main/" + chapter + "/" + item.replace(" ", "%20") + ") ");
-                    flag = itemNumber;
                 } else {
                     bw.write("/ [" + userName.split("\\.")[0] + "](https://github.com/now-start/effective-java/blob/main/" + chapter + "/" + item.replace(" ", "%20") + ") ");
-                    flag = itemNumber;
                 }
+                flag = itemNumber;
             }
             bw.write("|\n");
         }
