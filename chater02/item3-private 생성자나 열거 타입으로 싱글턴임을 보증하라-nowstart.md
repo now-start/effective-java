@@ -1,5 +1,15 @@
 # private 생성자나 열거 타입으로 싱글턴임을 보증하라
 
+<!-- TOC -->
+* [private 생성자나 열거 타입으로 싱글턴임을 보증하라](#private-생성자나-열거-타입으로-싱글턴임을-보증하라)
+  * [싱글턴](#싱글턴)
+  * [싱글턴 생성 방식](#싱글턴-생성-방식)
+  * [public static final 필드 방식의 싱글턴](#public-static-final-필드-방식의-싱글턴)
+    * [정적 팩터리 방식의 싱글턴](#정적-팩터리-방식의-싱글턴)
+    * [열거 타입 압식의 싱클턴](#열거-타입-압식의-싱클턴)
+  * [결론](#결론)
+<!-- TOC -->
+
 ## 싱글턴
 
 싱글턴이란 인스턴스를 오직 하나만 생성할 수 있는 클래스를 말한다
@@ -12,9 +22,9 @@
 public class Elvis {
     public static final Elvis INSTANCE = new Elvis();
 
-    private Elvis() { ...}
+    private Elvis() { ... }
 
-    public void leaveTheBuilding() {...}
+    public void leaveTheBuilding() { ... }
 }
 ```
 * 
@@ -23,13 +33,13 @@ public class Elvis {
 public class Elvis {
     private static final Elvis INSTANCE = new Elvis();
 
-    private Elvis() {...}
+    private Elvis() { ... }
 
     public static Elvis getInstance() {
         return INSTANCE;
     }
 
-    public void leaveTheBuilding() {...}
+    public void leaveTheBuilding() { ... }
 }
 ```
 
