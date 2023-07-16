@@ -6,6 +6,7 @@
 
 * List
     * [Chater02](#chater02)
+    * [Chater03](#chater03)
 
 ## Convention
 
@@ -58,4 +59,11 @@ effective-java
 | item5. 자원을 직접 명시하지 말고 의존 객체 주입을 사용하라 | [nowstart](https://github.com/now-start/effective-java/blob/main/chater02/item5-자원을%20직접%20명시하지%20말고%20의존%20객체%20주입을%20사용하라-nowstart.md) |
 | item6. 불필요한 객체 생성을 피하라 | [nowstart](https://github.com/now-start/effective-java/blob/main/chater02/item6-불필요한%20객체%20생성을%20피하라-nowstart.md) |
 | item7. 다 쓴 객체 참조를 해체하라 | [nowstart](https://github.com/now-start/effective-java/blob/main/chater02/item7-다%20쓴%20객체%20참조를%20해체하라-nowstart.md) |
-| item8. finalizer와 cleaner 사용을 피하라 | [nowstart](https://github.com/now-start/effective-java/blob/main/chater02/item8-finalizer와%20cleaner%20사용을%20피하라-nowstart.md) / [nowstart](https://github.com/now-start/effective-java/blob/main/chater02/item8-try_finally보다는%20try_with_resources를%20사용하라-nowstart.md) |
+| item8. finalizer와 cleaner 사용을 피하라 | [nowstart](https://github.com/now-start/effective-java/blob/main/chater02/item8-finalizer와%20cleaner%20사용을%20피하라-nowstart.md) |
+| item9. try_finally보다는 try_with_resources를 사용하라 | [nowstart](https://github.com/now-start/effective-java/blob/main/chater02/item9-try_finally보다는%20try_with_resources를%20사용하라-nowstart.md) |
+
+## Chater03
+
+| item | presentation |
+|------|--------------|
+| item10. equals는 일반 규약을 지켜 재정의하라 | [nowstart](https://github.com/now-start/effective-java/blob/main/chater03/item10-equals는%20일반%20규약을%20지켜%20재정의하라-nowstart.md) |
