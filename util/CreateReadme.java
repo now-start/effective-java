@@ -68,8 +68,8 @@ enum Constant {
         """),
     ITEM("""
                 
-        | item | presentation |
-        |------|--------------""");
+        | item | name | presentation |
+        |------|------|--------------""");
 
 
     private final String value;
@@ -131,7 +131,7 @@ public class CreateReadme {
 
                 if (!flag.equals(itemNumber)) {
                     bw.write("|\n");
-                    bw.write("| " + itemNumber + ". " + itemName + " | [" + userName.split("\\.")[0] + "](https://github.com/now-start/effective-java/blob/main/" + chapter + "/" + item.replace(" ", "%20") + ") ");
+                    bw.write("| " + itemNumber + " | " + itemName + " | [" + userName.split("\\.")[0] + "](https://github.com/now-start/effective-java/blob/main/" + chapter + "/" + item.replace(" ", "%20") + ") ");
                 } else {
                     bw.write("/ [" + userName.split("\\.")[0] + "](https://github.com/now-start/effective-java/blob/main/" + chapter + "/" + item.replace(" ", "%20") + ") ");
                 }
