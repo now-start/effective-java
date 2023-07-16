@@ -12,7 +12,7 @@
 * GitHub Workflow 사용
 * 각자 필요한 Branch 생성
 * 각 Chapter 별 패키지에 itemNumber-itemTitle-gitHubUserName 으로 저장
-  * **자동으로 README.md 를 생성하기 때문에 gitHubUserName 에 - 제외**
+  * **자동으로 README.md 를 생성하기 때문에 각 변수에 '-' 대신 '_' 표기로 변환**
 * 필요시 각 Chapter 패키지에 src 및 resource 패키지 생성 가능
 * 작성 완료 후 reviewer 전체 지정 후 main 으로 PR
 * 질문 및 필요사항 review 후 merge
