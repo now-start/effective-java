@@ -67,4 +67,4 @@ effective-java
 
 | item | name | presentation |
 |------|------|--------------|
-| item10 | equals는 일반 규약을 지켜 재정의하라 | [nowstart](https://github.com/now-start/effective-java/blob/main/chater03/item10-equals는%20일반%20규약을%20지켜%20재정의하라-nowstart.md) / [nowstart2](https://github.com/now-start/effective-java/blob/main/chater03/item10-equals는%20일반%20규약을%20지켜%20재정의하라-nowstart2.md) |
+| item10 | equals는 일반 규약을 지켜 재정의하라 | [nowstart](https://github.com/now-start/effective-java/blob/main/chater03/item10-equals는%20일반%20규약을%20지켜%20재정의하라-nowstart.md) |
