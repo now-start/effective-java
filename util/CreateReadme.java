@@ -28,7 +28,7 @@ enum Constant {
 
 enum Path {
     ROOT_PATH("./"),
-    README_PATH("README.md"),
+    README_PATH("./README.md"),
     INIT_PATH("util/INIT.md");
 
     private final String value;
