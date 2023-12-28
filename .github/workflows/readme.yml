@@ -30,6 +30,7 @@ jobs:
           distribution: 'corretto'
       - name: Run Java
         run: |
+          ls
           javac -encoding utf-8 ./util/CreateReadme.java
           java util.CreateReadme
           cat README.md >> $GITHUB_STEP_SUMMARY
