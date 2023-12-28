@@ -47,7 +47,7 @@ public class CreateReadme {
     public static void main(String[] args) {
         List<String> chapters = Arrays.stream(Objects.requireNonNull(new File(Path.ROOT_PATH.toString()).list())).filter(s -> s.contains("chater")).sorted().toList();
 
-        try (BufferedReader br = new BufferedReader(new FileReader(Path.README_PATH.toString()));
+        try (BufferedReader br = new BufferedReader(new FileReader(Path.INIT_PATH.toString()));
              BufferedWriter bw = new BufferedWriter(new FileWriter(Path.README_PATH.toString()))) {
 
             String line;
